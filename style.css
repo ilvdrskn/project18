@@ -36,6 +36,49 @@ body {
     display: flex;
 }
 
+.item {
+    display: flex;
+    flex-direction: column;
+    padding: .3em;
+    position: relative;
+}
+
+.overlay ul {
+    list-style: none;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+.overlay li {
+    margin-bottom: .5em;
+}
+p {
+    order: 1;
+}
+
+.item.hiden .overlay {
+    display: none;
+}
+
+.overlay {
+    order: 3;
+}
+
+.svg-arrow {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 50%;
+    transition: transform .2s;
+    transform: rotate(180deg);
+}
+
+.item.hiden .svg-arrow {
+    transform: rotate(0);
+}
+
+
+
 @media screen and (max-width: 600px) {
     .main-head {
         justify-content: space-between;
@@ -62,12 +105,12 @@ body {
         position: absolute;
         top: 0.5em; right: 0.5em;
         width: 100%;
-        border: 1px solid red;
         width: 60%; height: 100%;
         background: #fff;
         flex-direction: column;
         padding: 4em 1em;
         gap: 1em;
+        color:hsl(0, 0%, 41%);
     }
 
     button[type=button] {
@@ -75,9 +118,11 @@ body {
         padding: 1em 3em;
         border: none;
         border-radius: 20px;
+        background: #fff;
+        color:hsl(0, 0%, 8%);
     }
 
-    button[type=button]:focus {
+    button[type=button]:focus, button[type=button]:hover {
         border: 1px solid black;
     }
 }
