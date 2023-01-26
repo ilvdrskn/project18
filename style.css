@@ -132,7 +132,7 @@ p.info {
         position: absolute;
         top: 0; right: 0;
         width: 100%;
-        width: 60%; height: calc(100% - .5em);
+        width: 60%; height: calc(100%);
         background: #fff;
         flex-direction: column;
         padding: 4em 1em;
