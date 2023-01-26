@@ -29,7 +29,6 @@ body {
 .main-head {
     display: flex;
     padding: 1.5em;
-    border: 1px solid black;
 }
 
 .modal-menu {
@@ -77,6 +76,34 @@ p {
     transform: rotate(0);
 }
 
+.picture {
+    background: url("./images/image-hero-desktop.png") no-repeat center;
+    background-size: cover;
+    flex-basis: 60%;
+}
+
+main.main-info{
+    display: flex;
+    height: 90vh;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.heading  {
+    font-size: 2em;
+    margin-top: 1em;
+}
+
+p.info {
+    order: 2;
+    text-align: center;
+    color:hsl(0, 0%, 41%);
+}
 
 
 @media screen and (max-width: 600px) {
@@ -103,9 +130,9 @@ p {
 
     .modal-menu {
         position: absolute;
-        top: 0.5em; right: 0.5em;
+        top: 0; right: 0;
         width: 100%;
-        width: 60%; height: 100%;
+        width: 60%; height: calc(100% - .5em);
         background: #fff;
         flex-direction: column;
         padding: 4em 1em;
@@ -124,5 +151,33 @@ p {
 
     button[type=button]:focus, button[type=button]:hover {
         border: 1px solid black;
+    }
+
+    .main-info {
+        flex-direction: column;
+        margin-bottom: 1em;
+    }
+
+    .picture {
+        background: url("./images/image-hero-mobile.png") no-repeat center top;
+        background-size: cover;
+    }
+
+    .main-info button {
+        background-color: hsl(0, 0%, 8%);
+        order: 3;
+        color:hsl(0, 0%, 98%);
+        width: 40%;
+        padding: 1em 2em;
+        font-size: 1.1em;
+    }
+
+    .main-info button:focus {
+        background: hsla(0, 0%, 8%, 0.651);
+    }
+
+    .foot {
+        display: flex;
+        justify-content: space-between;
     }
 }
