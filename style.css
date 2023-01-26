@@ -29,10 +29,15 @@ body {
 .main-head {
     display: flex;
     padding: 1.5em;
+    justify-content: space-between;
 }
 
-.modal-menu {
-    display: flex;
+.menu-svg {
+    display: none;
+}
+
+.svg-close {
+    display: none;
 }
 
 .item {
@@ -60,6 +65,44 @@ p {
 
 .overlay {
     order: 3;
+    position: absolute;
+    background-color: #fff;
+    top: 100%;
+    width: 150%;
+}
+
+.modal-menu {
+    display: flex;
+    width: 100%;
+    gap: 2em;
+    margin-left: .5em;
+}
+
+.action {
+    position: absolute;
+    right: 0;
+}
+
+.action button {
+    border: none;
+    background-color: hsl(0, 0%, 98%);
+    padding: 1em 3em;
+    border-radius: 20px;;
+}
+
+.item:hover {
+    cursor: pointer;
+    color: hsl(0, 0%, 8%);
+    font-weight: 700;
+}
+
+.item:hover .overlay {
+    font-weight: 400;
+}
+
+.action button:hover {
+    border: 1px solid hsl(0, 0%, 8%);
+    cursor: pointer;
 }
 
 .svg-arrow {
@@ -67,7 +110,7 @@ p {
     width: 30px;
     height: 30px;
     top: 0;
-    left: 50%;
+    left: 100%;
     transition: transform .2s;
     transform: rotate(180deg);
 }
@@ -80,11 +123,13 @@ p {
     background: url("./images/image-hero-desktop.png") no-repeat center;
     background-size: cover;
     flex-basis: 60%;
+    order: 2;
 }
 
 main.main-info{
     display: flex;
     height: 90vh;
+    padding-left: 10em;
 }
 
 .text {
@@ -92,28 +137,77 @@ main.main-info{
     flex-direction: column;
     align-items: center;
     gap: 2em;
+    order: 1;
 }
 
-.heading  {
-    font-size: 2em;
-    margin-top: 1em;
+.heading {
+    margin-top: 2em;
+    font-size: 5em;
+    font-weight: bolder;
+    align-self: flex-start;
 }
 
 p.info {
     order: 2;
-    text-align: center;
+    align-self: flex-start;
+    text-align: left;
     color:hsl(0, 0%, 41%);
+    width: 60%;
+    font-size: 1.2em;
 }
 
+.text button{
+    order: 3;
+    padding: 2em 5em;
+    width: 60%;
+    border-radius: 50px;
+    background-color: hsl(0, 0%, 8%);
+    color: white;
+    font-size: 1em;
+}
+
+
+.foot {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
 
 @media screen and (max-width: 600px) {
     .main-head {
         justify-content: space-between;
     }
 
+    .overlay {
+        position: relative;
+        top: 0;
+    }
+
     .svg-close {
+        display: block;
         position: absolute;
         top: 1em; right: 1em;
+    }
+
+    .action {
+        position: static;
+    }
+
+    .svg-arrow {
+        left: 50%;
+    }
+
+    p.info {
+        align-self: center;
+        width: 100%;
+        text-align: center;
+        font-size: 1em;
+
+    }
+
+    .menu-svg {
+        display: block;
     }
 
     .hide {
@@ -127,7 +221,6 @@ p.info {
     .closeModal {
         display: none;
     }
-
     .modal-menu {
         position: absolute;
         top: 0; right: 0;
@@ -149,13 +242,23 @@ p.info {
         color:hsl(0, 0%, 8%);
     }
 
+    .heading  {
+        font-size: 2em;
+        margin-top: 1em;
+    }
+
     button[type=button]:focus, button[type=button]:hover {
         border: 1px solid black;
     }
 
-    .main-info {
+    main.main-info {
         flex-direction: column;
         margin-bottom: 1em;
+        padding:0;
+    }
+
+    .text {
+        order: 2;
     }
 
     .picture {
